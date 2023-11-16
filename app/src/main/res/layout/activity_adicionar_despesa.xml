@@ -7,4 +7,140 @@
     android:background="@color/cyan"
     tools:context=".individual.AdicionarDespesa">
 
+    <ImageButton
+        android:id="@+id/btnVoltarAdicionarDespesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/cyan"
+        android:contentDescription="@string/botao_para_voltar_pra_tela_anterior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/seta_icon_1_"
+        app:tint="@color/black" />
+
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="100sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
+        android:layout_height="400sp"
+        android:background="@color/light_cyan"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/valor"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/inputValorAdicionarDespesa"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view4" />
+
+    <EditText
+        android:id="@+id/inputValorAdicionarDespesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/digite_o_valor_da_despesa"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view4"
+        app:layout_constraintVertical_bias="0.198" />
+
+    <EditText
+        android:id="@+id/inputCategoriaAdicionarDespesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="@string/digite_o_nome_da_categoria"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textColorHint="#757575"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintEnd_toEndOf="@+id/view4"
+        app:layout_constraintTop_toBottomOf="@+id/inputValorAdicionarDespesa"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/categoria"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view4"
+        app:layout_constraintEnd_toStartOf="@+id/inputCategoriaAdicionarDespesa"
+        app:layout_constraintStart_toStartOf="@+id/view4"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <ImageButton
+        android:id="@+id/btnAddDespesaAdicionarDespesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/cyan"
+        android:contentDescription="@string/botao_para_adicionar_despesa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:srcCompat="@drawable/add_icon" />
+
+    <ImageButton
+        android:id="@+id/btnHomeAdicionarDespesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@color/cyan"
+        android:contentDescription="@string/botao_para_voltar_para_tela_inicial"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintStart_toStartOf="@+id/view3"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:srcCompat="@drawable/home_icon" />
+
+    <ImageButton
+        android:id="@+id/btnGrupoAdicionarDespesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:backgroundTint="@color/cyan"
+        android:contentDescription="@string/botao_para_ir_tela_de_grupo"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintStart_toEndOf="@+id/btnHomeAdicionarDespesa"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:srcCompat="@drawable/grupo_icon" />
+
+    <ImageButton
+        android:id="@+id/btnDespesaAdicionarDespesa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/cyan"
+        android:contentDescription="@string/botao_para_ir_para_despesas"
+        app:layout_constraintBottom_toBottomOf="@+id/view3"
+        app:layout_constraintEnd_toStartOf="@+id/btnAddDespesaAdicionarDespesa"
+        app:layout_constraintStart_toEndOf="@+id/btnGrupoAdicionarDespesa"
+        app:layout_constraintTop_toTopOf="@+id/view3"
+        app:srcCompat="@drawable/receitas_icon__1_" />
 </androidx.constraintlayout.widget.ConstraintLayout>
