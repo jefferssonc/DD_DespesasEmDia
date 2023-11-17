@@ -22,4 +22,12 @@
     <string name="sair_do_grupo">Sair do Grupo</string>
     <string name="participantes">Participantes</string>
     <string name="botao_para_adicionar_integrante">Botao para Adicionar Integrante</string>
+    <string name="enviar">Enviar</string>
+    <string name="digite_o_email_da_pessoa">Digite o email da pessoa</string>
+    <string name="digite_o_email_do_participante">Digite o email do participante</string>
+    <string name="adicionar_pessoa_no_grupo">Adicionar Pessoa no Grupo</string>
+    <string name="criar_grupo">Criar Grupo</string>
+    <string name="informe_o_nome_do_grupo">Informe o Nome do Grupo</string>
+    <string name="digite_o_nome_do_grupo">Digite o Nome do Grupo</string>
+    <string name="criar">Criar</string>
 </resources>
