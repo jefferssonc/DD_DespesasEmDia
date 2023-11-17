@@ -17,4 +17,9 @@
     <string name="texto_que_mostra_a_despesa_total_de_uma_categoria_de_despesa">Texto que mostra a despesa total de uma categoria de despesa</string>
     <string name="r_0_01">R$ 0.01</string>
     <string name="nome_da_despesa">Nome da Despesa</string>
+    <string name="imagem_que_representa_o_grupo">Imagem que representa o grupo</string>
+    <string name="valor_total_da_despesa_do_grupo">Valor Total da Despesa do Grupo</string>
+    <string name="sair_do_grupo">Sair do Grupo</string>
+    <string name="participantes">Participantes</string>
+    <string name="botao_para_adicionar_integrante">Botao para Adicionar Integrante</string>
 </resources>
