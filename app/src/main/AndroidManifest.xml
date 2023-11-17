@@ -13,6 +13,12 @@
         android:theme="@style/Theme.DD_DespesasEmDia"
         tools:targetApi="31">
         <activity
+            android:name=".individual.DespesaUnica"
+            android:exported="false" />
+        <activity
+            android:name=".individual.LayoutDespesas"
+            android:exported="false" />
+        <activity
             android:name=".individual.AdicionarDespesa"
             android:exported="false" />
         <activity

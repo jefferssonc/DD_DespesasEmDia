@@ -13,4 +13,8 @@
     <string name="valor">Valor</string>
     <string name="digite_o_nome_da_categoria">Digite o nome da categoria</string>
     <string name="categoria">Categoria</string>
+    <string name="despesas">Despesas</string>
+    <string name="texto_que_mostra_a_despesa_total_de_uma_categoria_de_despesa">Texto que mostra a despesa total de uma categoria de despesa</string>
+    <string name="r_0_01">R$ 0.01</string>
+    <string name="nome_da_despesa">Nome da Despesa</string>
 </resources>
