@@ -35,4 +35,6 @@
     <string name="_10_10_1010">10/10/1010</string>
     <string name="botao_para_deletar_despesa_unica">Botao para deletar despesa unica</string>
     <string name="nomeuser">NomeUser</string>
+    <string name="imagem_que_representa_a_despesa">Imagem que representa a despesa</string>
+    <string name="nomedadespesa">NomeDaDespesa</string>
 </resources>
