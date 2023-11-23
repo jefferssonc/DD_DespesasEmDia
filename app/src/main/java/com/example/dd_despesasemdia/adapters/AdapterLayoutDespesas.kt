@@ -11,12 +11,16 @@ import com.example.dd_despesasemdia.R
 import com.example.dd_despesasemdia.models.DespesaLayoutDespesasModel
 
 class AdapterLayoutDespesas(private val context:Context, private val despesasLayout:MutableList<DespesaLayoutDespesasModel>): RecyclerView.Adapter<AdapterLayoutDespesas.LayoutDespesasViewHolder>() {
+
+    var onItemClickListener: ((String) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LayoutDespesasViewHolder {
         val itemDespesasLayout = LayoutInflater.from(context).inflate(R.layout.layout_despesas_item,parent,false)
         val holder = LayoutDespesasViewHolder(itemDespesasLayout)
         return holder
 
     }
+
 
     override fun onBindViewHolder(holder: LayoutDespesasViewHolder, position: Int) {
         holder.foto.setImageResource(despesasLayout[position].foto)
@@ -31,6 +35,14 @@ class AdapterLayoutDespesas(private val context:Context, private val despesasLay
         val foto = itemView.findViewById<ImageView>(R.id.imgLayoutDespesasItem)
         val nome = itemView.findViewById<TextView>(R.id.txtNomeDespesaLayoutDespesasItem)
 
-
+        init {
+                foto.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
+                    val itemClicado = despesasLayout[position]
+                    onItemClickListener?.invoke(itemClicado.nome)
+                }
+            }
+        }
     }
 }
