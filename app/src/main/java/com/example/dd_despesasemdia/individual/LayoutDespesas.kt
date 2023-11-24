@@ -41,7 +41,6 @@ class LayoutDespesas : AppCompatActivity() {
             .addOnSuccessListener { querySnapshot ->
 
                 for (document in querySnapshot) {
-                    // val valor = document.getLong("Valor")
                     val nome = document.getString("Nome")
                     recyclerViewLayoutDespesas.adapter = adapterDespesasLayout
                     val icone = when (nome.toString()) {

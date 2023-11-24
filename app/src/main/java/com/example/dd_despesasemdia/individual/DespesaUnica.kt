@@ -70,6 +70,7 @@ class DespesaUnica : AppCompatActivity() {
                 for (document in querySnapshot.documents){
                     val data = document.getString("Data")
                     val valor = document.getDouble("Valor") ?: 0.0
+
                     recyclerViewDespesaUnica.adapter = adapterDespesaUnicaPagInicial
                     val despesa = DespesaUnicaModel(valor.toString(),
                         data.toString()
