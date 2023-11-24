@@ -41,4 +41,5 @@
     <string name="botao_para_criar_grupo">Botao para criar grupo</string>
     <string name="grupos">Grupos</string>
     <string name="criar_novo_grupo">Criar Novo Grupo</string>
+    <string name="botao_do_grupo">Botao do grupo</string>
 </resources>
