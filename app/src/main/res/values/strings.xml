@@ -42,4 +42,5 @@
     <string name="grupos">Grupos</string>
     <string name="criar_novo_grupo">Criar Novo Grupo</string>
     <string name="botao_do_grupo">Botao do grupo</string>
+    <string name="id_despesa">ID Despesa</string>
 </resources>
