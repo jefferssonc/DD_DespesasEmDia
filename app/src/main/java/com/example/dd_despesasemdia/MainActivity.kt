@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dd_despesasemdia.adapters.AdapterDespesaPrincipal
+import com.example.dd_despesasemdia.grupo.TodosGrupos
 import com.example.dd_despesasemdia.individual.AdicionarDespesa
 import com.example.dd_despesasemdia.individual.LayoutDespesas
 import com.example.dd_despesasemdia.models.DespesaModel
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         val view = findViewById<View>(R.id.view2)
 
-
+        irParaGrupos()
         irParaAdd()
         irParaDespesa()
         voltarParaPrincipal()
@@ -148,6 +149,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun irParaGrupos(){
+        val btvoltar = findViewById<ImageButton>(R.id.btnGrupoPerfilIndividual)
+
+        btvoltar.setOnClickListener { view ->
+            val intent = Intent(this, TodosGrupos::class.java)
+            startActivity(intent)
+        }
+    }
+
     override fun onStart() {
         super.onStart()
         val txtnome = findViewById<TextView>(R.id.txtUserNamePerfil)
@@ -155,6 +165,5 @@ class MainActivity : AppCompatActivity() {
         txtnome.text = username
         somaDespesa()
     }
-
 
 }

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dd_despesasemdia.R
 import com.example.dd_despesasemdia.adapters.AdapterGrupos
+import com.example.dd_despesasemdia.individual.DespesaUnica
 import com.example.dd_despesasemdia.models.GruposModel
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseNetworkException
@@ -35,13 +36,20 @@ class TodosGrupos : AppCompatActivity() {
 
         val listaTodosGrupos : MutableList<GruposModel> = mutableListOf()
         val adapterTodosGrupos = AdapterGrupos(this,listaTodosGrupos)
-        recyclerViewGrupos.adapter = adapterTodosGrupos
+
 
 
         db.collection("Grupo").whereArrayContains("Participantes", user?.displayName.toString()).get().addOnSuccessListener { documents ->
             for(document in documents){
                 val nome = document.getString("Nome")
                 recyclerViewGrupos.adapter = adapterTodosGrupos
+
+                adapterTodosGrupos.onItemClickListener = { textoDoItem ->
+                    val intent = Intent(this, DespesaUnica::class.java)
+                    intent.putExtra("textoDoItem", textoDoItem)
+                    startActivity(intent)
+                }
+
                 val grupo = GruposModel(nome.toString())
                 listaTodosGrupos.add(grupo)
             }

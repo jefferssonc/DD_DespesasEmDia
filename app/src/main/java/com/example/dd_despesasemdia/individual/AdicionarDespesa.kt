@@ -75,7 +75,23 @@ class AdicionarDespesa : AppCompatActivity() {
                     val snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT)
                     snackbar.setBackgroundTint(Color.RED)
                     snackbar.show()
+                }
 
+            val docRef = db.collection("Grupo")
+            docRef.whereArrayContains("Participantes", user?.displayName.toString())
+                .get().addOnSuccessListener {documents ->
+                    for(document in documents){
+                        val idDoDocumento = document.id
+                        docRef.document(idDoDocumento).collection("Despesa").document().set(usersmap)
+                    }
+                }.addOnFailureListener {exception ->
+                    val erro = when (exception) {
+                        is FirebaseNetworkException -> "Sem conexão com a internet"
+                        else -> "Erro ao adicionar"
+                    }
+                    val snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT)
+                    snackbar.setBackgroundTint(Color.RED)
+                    snackbar.show()
                 }
         }
     }
