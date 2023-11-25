@@ -46,4 +46,9 @@
     <string name="deseja_realmente_deletar">Deseja realmente deletar?</string>
     <string name="sim">SIM</string>
     <string name="nao">NAO</string>
+    <string name="digite_o_email">Digite o Email</string>
+    <string name="digite_o_nome">Digite o Nome</string>
+    <string name="nome">Nome</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
 </resources>
