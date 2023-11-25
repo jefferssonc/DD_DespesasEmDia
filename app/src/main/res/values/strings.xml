@@ -30,7 +30,6 @@
     <string name="informe_o_nome_do_grupo">Informe o Nome do Grupo</string>
     <string name="digite_o_nome_do_grupo">Digite o Nome do Grupo</string>
     <string name="criar">Criar</string>
-    <string name="deletar">Deletar</string>
     <string name="despesas_do_grupo">Despesas do Grupo</string>
     <string name="alimenta_o">Alimentação</string>
     <string name="_10_10_1010">10/10/1010</string>
@@ -44,5 +43,7 @@
     <string name="criar_novo_grupo">Criar Novo Grupo</string>
     <string name="botao_do_grupo">Botao do grupo</string>
     <string name="id_despesa">ID Despesa</string>
-    <string name="title_activity_deletar_despesa">DeletarDespesa</string>
+    <string name="deseja_realmente_deletar">Deseja realmente deletar?</string>
+    <string name="sim">SIM</string>
+    <string name="nao">NAO</string>
 </resources>
