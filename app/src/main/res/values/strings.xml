@@ -51,4 +51,6 @@
     <string name="nome">Nome</string>
     <string name="email">Email</string>
     <string name="login">Login</string>
+    <string name="digite_a_senha">Digite a Senha</string>
+    <string name="senha">Senha</string>
 </resources>
