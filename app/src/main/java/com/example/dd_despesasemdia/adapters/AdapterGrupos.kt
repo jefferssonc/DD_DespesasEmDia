@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dd_despesasemdia.R
@@ -23,6 +24,7 @@ class AdapterGrupos(private val context:Context, private val gruposLayout:Mutabl
     override fun onBindViewHolder(holder: GruposViewHolder, position: Int) {
         holder.nomeGrupo.text = gruposLayout[position].nome
 
+
     }
 
     override fun getItemCount(): Int {
@@ -31,7 +33,7 @@ class AdapterGrupos(private val context:Context, private val gruposLayout:Mutabl
 
     inner class GruposViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val nomeGrupo = itemView.findViewById<TextView>(R.id.txtGrupoNameTodosGruposItem)
-        val icone = itemView.findViewById<ImageButton>(R.id.imgLayoutDespesasItem)
+        val icone = itemView.findViewById<ImageView>(R.id.iconTodosGruposItem)
 
         init {
             icone.setOnClickListener {

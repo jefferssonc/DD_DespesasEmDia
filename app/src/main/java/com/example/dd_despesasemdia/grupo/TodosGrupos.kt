@@ -45,7 +45,7 @@ class TodosGrupos : AppCompatActivity() {
                 recyclerViewGrupos.adapter = adapterTodosGrupos
 
                 adapterTodosGrupos.onItemClickListener = { textoDoItem ->
-                    val intent = Intent(this, DespesaUnica::class.java)
+                    val intent = Intent(this, LayoutGrupo::class.java)
                     intent.putExtra("textoDoItem", textoDoItem)
                     startActivity(intent)
                 }

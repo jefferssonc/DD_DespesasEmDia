@@ -20,7 +20,7 @@ class CriarGrupo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_criar_grupo)
 
-        val btnCriar = findViewById<Button>(R.id.btnCriarCriarGrupo)
+        val btnCriar = findViewById<Button>(R.id.btnDeletar)
         val editNome = findViewById<EditText>(R.id.inputTxtCriarGrupo)
 
         btnCriar.setOnClickListener { view ->

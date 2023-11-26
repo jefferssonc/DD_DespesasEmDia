@@ -12,14 +12,13 @@ import com.example.dd_despesasemdia.MainActivity
 import com.example.dd_despesasemdia.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseNetworkException
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AdicionarPessoaGrupo : AppCompatActivity() {
 
     private val db = FirebaseFirestore.getInstance()
-    val user = FirebaseAuth.getInstance().currentUser
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adicionar_pessoa_grupo)

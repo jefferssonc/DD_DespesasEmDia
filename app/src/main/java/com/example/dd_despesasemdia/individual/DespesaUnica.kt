@@ -1,5 +1,6 @@
 package com.example.dd_despesasemdia.individual
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -73,6 +74,14 @@ class DespesaUnica : AppCompatActivity() {
                     val idDoDocumento = document.id
 
                     recyclerViewDespesaUnica.adapter = adapterDespesaUnicaPagInicial
+
+                    adapterDespesaUnicaPagInicial.onItemClickListener = { textoDoItem2 ->
+                        val intent = Intent(this, DeletarDespesa::class.java)
+                        intent.putExtra("textoDoItem", textoDoItem)
+                        intent.putExtra("textoDoItem2", textoDoItem2)
+                        startActivity(intent)
+                    }
+
                     val despesa = DespesaUnicaModel(valor.toString(),
                         data.toString(),
                         idDoDocumento
