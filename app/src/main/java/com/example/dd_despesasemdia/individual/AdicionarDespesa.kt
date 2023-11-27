@@ -12,7 +12,6 @@ import com.example.dd_despesasemdia.MainActivity
 import com.example.dd_despesasemdia.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseNetworkException
-import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.Locale
@@ -59,7 +58,6 @@ class AdicionarDespesa : AppCompatActivity() {
                 "Categoria" to categoria.text.toString(),
                 "Conta" to user?.displayName,
                 "Data"  to data,
-                "timestamp" to Timestamp.now()
             )
             db.collection("Usuarios").document("U" + user?.displayName).collection("Despesas")
                 .document()
@@ -67,23 +65,6 @@ class AdicionarDespesa : AppCompatActivity() {
                     val snackbar = Snackbar.make(view, "Despesa adicionada", Snackbar.LENGTH_SHORT)
                     snackbar.setBackgroundTint(Color.GREEN)
                     snackbar.show()
-                }.addOnFailureListener {exception ->
-                    val erro = when (exception) {
-                        is FirebaseNetworkException -> "Sem conexão com a internet"
-                        else -> "Erro ao adicionar"
-                    }
-                    val snackbar = Snackbar.make(view, erro, Snackbar.LENGTH_SHORT)
-                    snackbar.setBackgroundTint(Color.RED)
-                    snackbar.show()
-                }
-
-            val docRef = db.collection("Grupo")
-            docRef.whereArrayContains("Participantes", user?.displayName.toString())
-                .get().addOnSuccessListener {documents ->
-                    for(document in documents){
-                        val idDoDocumento = document.id
-                        docRef.document(idDoDocumento).collection("Despesa").document().set(usersmap)
-                    }
                 }.addOnFailureListener {exception ->
                     val erro = when (exception) {
                         is FirebaseNetworkException -> "Sem conexão com a internet"

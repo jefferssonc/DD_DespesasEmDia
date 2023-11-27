@@ -14,6 +14,7 @@ import com.example.dd_despesasemdia.R
 import com.example.dd_despesasemdia.adapters.AdapterUserGrupo
 import com.example.dd_despesasemdia.models.UserGrupoModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -73,17 +74,16 @@ class LayoutGrupo : AppCompatActivity() {
                 }
             }
 
-//        btnSair.setOnClickListener { view->
+        btnSair.setOnClickListener { view->
 
-//            db.collection("Grupo").document(textoDoItem.toString())
-//                .get().addOnSuccessListener {document->
-//                    val itens = document.get("Participantes").toObjects<String>()
-//                    val indiceDoItem = itens.indexOfFirst{
-//
-//                    }
-//                    arrayItens.removeAt(indiceDoItem)
-//                }
-//        }
+            db.collection("Grupo").document(textoDoItem.toString())
+                    .update("Participantes", FieldValue.arrayRemove(user?.displayName))
+                    .addOnSuccessListener {
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("textoDoItem", textoDoItem)
+                        startActivity(intent)
+                }
+        }
 
         btnDespesa.setOnClickListener { view->
             val intent = Intent(this, DespesasGrupo::class.java)

@@ -76,7 +76,7 @@ class DespesaUnica : AppCompatActivity() {
                     recyclerViewDespesaUnica.adapter = adapterDespesaUnicaPagInicial
 
                     adapterDespesaUnicaPagInicial.onItemClickListener = { textoDoItem2 ->
-                        val intent = Intent(this, DeletarDespesa::class.java)
+                        val intent = Intent(this, MenuDespesa::class.java)
                         intent.putExtra("textoDoItem", textoDoItem)
                         intent.putExtra("textoDoItem2", textoDoItem2)
                         startActivity(intent)
