@@ -1,5 +1,6 @@
 package com.example.dd_despesasemdia.grupo
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -41,6 +42,9 @@ class CriarGrupo : AppCompatActivity() {
                 snackbar.setBackgroundTint(Color.RED)
                 snackbar.show()
             }
+
+            val intent = Intent(this, TodosGrupos::class.java)
+            startActivity(intent)
         }
     }
 }

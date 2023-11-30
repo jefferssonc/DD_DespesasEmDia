@@ -8,7 +8,6 @@ import android.widget.Button
 import android.graphics.Color
 import android.widget.EditText
 import android.widget.ImageButton
-import com.example.dd_despesasemdia.MainActivity
 import com.example.dd_despesasemdia.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseNetworkException
@@ -46,6 +45,8 @@ class AdicionarPessoaGrupo : AppCompatActivity() {
                     snackbar.setBackgroundTint(Color.RED)
                     snackbar.show()
                 }
+            val intent = Intent(this, LayoutGrupo::class.java)
+            startActivity(intent)
         }
     }
 
