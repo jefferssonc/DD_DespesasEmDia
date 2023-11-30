@@ -33,7 +33,7 @@ class AdapterGrupos(private val context:Context, private val gruposLayout:Mutabl
 
     inner class GruposViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val nomeGrupo = itemView.findViewById<TextView>(R.id.txtGrupoNameTodosGruposItem)
-        val icone = itemView.findViewById<ImageView>(R.id.iconTodosGruposItem)
+        val icone = itemView.findViewById<ImageView>(R.id.btnTodosGruposItem)
 
         init {
             icone.setOnClickListener {

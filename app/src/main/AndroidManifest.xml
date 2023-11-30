@@ -16,16 +16,16 @@
             android:name=".individual.MenuDespesa"
             android:exported="false" />
         <activity
-            android:name=".individual.AdicionarDespesaGrupo"
+            android:name=".individual.AdicionarDespesa"
             android:exported="false" />
         <activity
-            android:name=".LoginLayout"
+            android:name=".individual.LayoutDespesas"
+            android:exported="false"/>
+        <activity
+            android:name=".individual.DespesaUnica"
             android:exported="false" />
         <activity
             android:name=".grupo.TodosGrupos"
-            android:exported="false" />
-        <activity
-            android:name=".individual.DeletarDespesa"
             android:exported="false" />
         <activity
             android:name=".grupo.DespesasGrupo"
@@ -40,16 +40,14 @@
             android:name=".grupo.LayoutGrupo"
             android:exported="false" />
         <activity
-            android:name=".individual.DespesaUnica"
-            android:exported="false" />
-        <activity
-            android:name=".individual.LayoutDespesas"
-            android:exported="false" />
-        <activity
-            android:name=".individual.AdicionarDespesa"
-            android:exported="false" />
+            android:name=".grupo.DefinicoesDespesasGrupo"
+            android:exported="false"/>
+
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginLayout"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

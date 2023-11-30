@@ -55,4 +55,9 @@
     <string name="login">Login</string>
     <string name="digite_a_senha">Digite a Senha</string>
     <string name="senha">Senha</string>
+    <string name="adicionar_em_grupos">Adicionar em Grupos</string>
+    <string name="deletar_despesa">Deletar Despesa</string>
+    <string name="definicoes">Definicoes</string>
+    <string name="edicao">EDICAO</string>
+    <string name="informacoes_gerais">Informacoes Gerais</string>
 </resources>
