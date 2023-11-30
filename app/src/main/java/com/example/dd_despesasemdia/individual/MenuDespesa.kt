@@ -75,7 +75,7 @@ class MenuDespesa : AppCompatActivity() {
                     snackbar.show()
                 }
 
-            db.collection("Grupo").whereArrayContains("Participantes", user?.displayName.toString())
+            db.collection("Grupo").whereArrayContains("Participantes", user?.email.toString())
                 .get().addOnSuccessListener { documents ->
                     for (document in documents) {
                         val idDoDocumento = document.id
@@ -110,13 +110,13 @@ class MenuDespesa : AppCompatActivity() {
                     val usersmap = hashMapOf(
                         "Valor" to valor,
                         "Categoria" to textoDoItem,
-                        "Conta" to user?.displayName,
+                        "Conta" to user?.email.toString(),
                         "Data" to data,
                         "Id" to textoDoItem2
                     )
 
                     val docRef = db.collection("Grupo")
-                    docRef.whereArrayContains("Participantes", user?.displayName.toString())
+                    docRef.whereArrayContains("Participantes", user?.email.toString())
                         .get().addOnSuccessListener { documents ->
                             for (document1 in documents) {
                                 val idDoDocumento = document1.id
