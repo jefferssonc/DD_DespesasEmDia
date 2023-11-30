@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
+import com.example.dd_despesasemdia.MainActivity
 import com.example.dd_despesasemdia.R
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.FirebaseNetworkException
@@ -21,13 +23,15 @@ class CriarGrupo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_criar_grupo)
 
+        voltarParaPrincipal()
+
         val btnCriar = findViewById<Button>(R.id.btnAdicionar)
         val editNome = findViewById<EditText>(R.id.inputTxtCriarGrupo)
 
         btnCriar.setOnClickListener { view ->
             val catmap = hashMapOf(
                 "Nome" to editNome.text.toString(),
-                "Participantes" to arrayListOf(user?.displayName)
+                "Participantes" to arrayListOf(user?.email.toString())
             )
             db.collection("Grupo").document(editNome.text.toString()).set(catmap).addOnCompleteListener {
                 val snackbar = Snackbar.make(view, "Grupo criado", Snackbar.LENGTH_SHORT)
@@ -43,6 +47,15 @@ class CriarGrupo : AppCompatActivity() {
                 snackbar.show()
             }
 
+            val intent = Intent(this, TodosGrupos::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun voltarParaPrincipal(){
+        val btvoltar = findViewById<ImageButton>(R.id.btnVoltarCriarGrupo)
+
+        btvoltar.setOnClickListener{view ->
             val intent = Intent(this, TodosGrupos::class.java)
             startActivity(intent)
         }

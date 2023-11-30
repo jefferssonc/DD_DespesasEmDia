@@ -7,6 +7,7 @@ import android.icu.util.Calendar
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import com.example.dd_despesasemdia.MainActivity
 import com.example.dd_despesasemdia.R
 import com.google.android.material.snackbar.Snackbar
@@ -28,6 +29,17 @@ class MenuDespesa : AppCompatActivity() {
         val textoDoItem2 = intent.getStringExtra("textoDoItem2")
         val btnDeletar = findViewById<Button>(R.id.btnDeletarDespesaDefinicoesGrupo)
         val btnAdicionar = findViewById<Button>(R.id.btnAddDefinicoesGrupo)
+        val textCategoria = findViewById<TextView>(R.id.txtCategoriaDefinicoesDespesas)
+        val textValor = findViewById<TextView>(R.id.txtValorDefinicoesDespesas)
+
+        db.collection("Usuarios").document("U" + user?.displayName)
+            .collection("Despesas").document(textoDoItem2.toString()).get().addOnSuccessListener {document->
+                val valor = document.getLong("Valor")?.toInt() ?: 0
+                val categoriaNome =  document.getString("Nome")
+                textCategoria.text = categoriaNome
+                textValor.text = valor.toString()
+            }
+
 
         btnDeletar.setOnClickListener { view ->
             db.collection("Usuarios").document("U" + user?.displayName).collection("Despesas")

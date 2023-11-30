@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dd_despesasemdia.MainActivity
 import com.example.dd_despesasemdia.R
 import com.example.dd_despesasemdia.adapters.AdapterGrupos
 import com.example.dd_despesasemdia.individual.DespesaUnica
@@ -27,6 +28,8 @@ class TodosGrupos : AppCompatActivity() {
         setContentView(R.layout.activity_todos_grupos)
 
         criarGrupo()
+        voltarParaPrincipal()
+
 
         val view = findViewById<View>(R.id.view10)
 
@@ -39,7 +42,7 @@ class TodosGrupos : AppCompatActivity() {
 
 
 
-        db.collection("Grupo").whereArrayContains("Participantes", user?.displayName.toString()).get().addOnSuccessListener { documents ->
+        db.collection("Grupo").whereArrayContains("Participantes", user?.email.toString()).get().addOnSuccessListener { documents ->
             for(document in documents){
                 val nome = document.getString("Nome")
                 recyclerViewGrupos.adapter = adapterTodosGrupos
@@ -71,6 +74,15 @@ class TodosGrupos : AppCompatActivity() {
 
         btnCriar.setOnClickListener{view ->
             val intent = Intent(this, CriarGrupo::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun voltarParaPrincipal(){
+        val btnvoltar = findViewById<ImageButton>(R.id.btnVoltarTodosGrupos)
+
+        btnvoltar.setOnClickListener{view ->
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
     }

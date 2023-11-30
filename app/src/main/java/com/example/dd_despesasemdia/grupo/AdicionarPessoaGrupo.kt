@@ -45,7 +45,7 @@ class AdicionarPessoaGrupo : AppCompatActivity() {
                     snackbar.setBackgroundTint(Color.RED)
                     snackbar.show()
                 }
-            val intent = Intent(this, LayoutGrupo::class.java)
+            val intent = Intent(this, TodosGrupos::class.java)
             startActivity(intent)
         }
     }

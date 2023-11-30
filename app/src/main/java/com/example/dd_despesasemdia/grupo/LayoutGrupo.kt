@@ -26,7 +26,6 @@ class LayoutGrupo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_layout_grupo)
 
-        voltarParaPrincipal()
 
         val textoDoItem = intent.getStringExtra("textoDoItem")
         val btnAdicionar = findViewById<ImageButton>(R.id.btnAddIntegranteLayoutGrupo)
@@ -77,7 +76,7 @@ class LayoutGrupo : AppCompatActivity() {
         btnSair.setOnClickListener { view->
 
             db.collection("Grupo").document(textoDoItem.toString())
-                    .update("Participantes", FieldValue.arrayRemove(user?.displayName))
+                    .update("Participantes", FieldValue.arrayRemove(user?.email))
                     .addOnSuccessListener {
                         val intent = Intent(this, MainActivity::class.java)
                         intent.putExtra("textoDoItem", textoDoItem)
@@ -94,14 +93,5 @@ class LayoutGrupo : AppCompatActivity() {
 
     }
 
-
-    private fun voltarParaPrincipal(){
-        val btnvoltar = findViewById<ImageButton>(R.id.btnHomeLayoutGrupo)
-
-        btnvoltar.setOnClickListener{view ->
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-    }
 
 }
