@@ -26,8 +26,8 @@ class MenuDespesa : AppCompatActivity() {
 
         val textoDoItem = intent.getStringExtra("textoDoItem")
         val textoDoItem2 = intent.getStringExtra("textoDoItem2")
-        val btnDeletar = findViewById<Button>(R.id.btnDeletar)
-        val btnAdicionar = findViewById<Button>(R.id.btnAdicionar)
+        val btnDeletar = findViewById<Button>(R.id.btnDeletarDespesaDefinicoesGrupo)
+        val btnAdicionar = findViewById<Button>(R.id.btnAddDefinicoesGrupo)
 
         btnDeletar.setOnClickListener { view ->
             db.collection("Usuarios").document("U" + user?.displayName).collection("Despesas")
