@@ -7,12 +7,17 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.dd_despesasemdia.R
 import com.example.dd_despesasemdia.adapters.AdapterDespesaPrincipal
 import com.example.dd_despesasemdia.models.DespesaModel
+import com.google.firebase.firestore.FirebaseFirestore
 
 class DespesasGrupo : AppCompatActivity() {
+
+    private val db = FirebaseFirestore.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_despesas_grupo)
 
+        val textoDoItem = intent.getStringExtra("textoDoItem")
 
         //Utilizando o mesmo adapter e model do despesa unica principal, visto que as infos sao as mesmas
 
@@ -22,16 +27,21 @@ class DespesasGrupo : AppCompatActivity() {
 
         val listaDespesaPrincipalGrupo : MutableList<DespesaModel> = mutableListOf()
         val adapterDespesaPrincipalGrupo = AdapterDespesaPrincipal(this, listaDespesaPrincipalGrupo)
-        recyclerViewDespesasGrupo.adapter = adapterDespesaPrincipalGrupo
 
-        val despesa1 = DespesaModel("Lazer", "10/03/1970","R$ 10.25")
-        val despesa2 = DespesaModel("Outros", "10/03/1978","R$ 105.25")
-        val despesa3 = DespesaModel("Jogo do Bicho", "10/03/1978","R$ 105.25")
+        db.collection("Grupo").document(textoDoItem.toString()).collection("Despesa")
+            .get().addOnSuccessListener {documents->
+                for(document in documents){
+                    val nome = document.getString("Categoria")
+                    val valor = document.getDouble("Valor") ?: 0.0
+                    val data = document.getString("Data")
+                    recyclerViewDespesasGrupo.adapter = adapterDespesaPrincipalGrupo
+                    val despesa = DespesaModel(nome.toString(),
+                        data.toString(),
+                        valor.toString())
+                    listaDespesaPrincipalGrupo.add(despesa)
+                }
 
-        listaDespesaPrincipalGrupo.add(despesa1)
-        listaDespesaPrincipalGrupo.add(despesa2)
-        listaDespesaPrincipalGrupo.add(despesa3)
-
+            }
 
     }
 }
