@@ -46,6 +46,11 @@
     <string name="botao_do_grupo">Botao do grupo</string>
     <string name="id_despesa">ID Despesa</string>
     <string name="deseja_realmente_deletar">Deseja realmente deletar?</string>
+    <string name="defini_es">Definições?</string>
+    <string name="informa_es_gerais">INFORMAÇÕES GERAIS?</string>
+    <string name="edi_o">EDIÇÃO</string>
+    <string name="adicionar_em_grupos">Adicionar em grupos</string>
+    <string name="deletar_despesa">Deletar despesa</string>
     <string name="sim">SIM</string>
     <string name="nao">NAO</string>
     <string name="digite_o_email">Digite o Email</string>
